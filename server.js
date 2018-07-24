@@ -10,10 +10,8 @@ const image = require('./controllers/image');
 const db = require('knex')({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'lucasbertolo',
-    password : '',
-    database : 'smart-brain'
+    connectionString: process.env.DATABASE_URL,
+   	ssl: true
   }
 });
 
